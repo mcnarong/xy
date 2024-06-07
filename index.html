@@ -6,8 +6,8 @@
     <title>星野启动</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
         }
@@ -16,18 +16,46 @@
             margin: 20px auto;
             background-color: #fff;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .logo {
+            width: 150px; /* 设置 logo 的宽度 */
+            height: auto; /* 自动调整高度 */
+            margin-bottom: 20px;
         }
         h1 {
-            text-align: center;
             color: #333;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px; /* 增加段落底部间距 */
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <img class="logo" src="your-logo.png" alt="星野启动 Logo">
         <h1>欢迎来到星野</h1>
-        <p>这是是第二世界</p>
+        <p>星野启动是一个充满惊喜的游戏世界，等待着您的探索。在这里，您可以畅游于各种奇幻地形，与朋友一起冒险，还有许多有趣的社区活动等着您加入。</p>
+        <a class="btn" href="#">了解更多</a>
     </div>
 </body>
 </html>
