@@ -11,6 +11,27 @@
             margin: 0;
             padding: 0;
         }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
         .container {
             max-width: 800px;
             margin: 20px auto;
@@ -21,8 +42,8 @@
             text-align: center;
         }
         .logo {
-            width: 150px; /* 设置 logo 的宽度 */
-            height: auto; /* 自动调整高度 */
+            width: 150px;
+            height: auto;
             margin-bottom: 20px;
         }
         h1 {
@@ -34,7 +55,7 @@
             color: #666;
             font-size: 18px;
             line-height: 1.6;
-            margin-bottom: 20px; /* 增加段落底部间距 */
+            margin-bottom: 20px;
         }
         .btn {
             display: inline-block;
@@ -48,14 +69,172 @@
         .btn:hover {
             background-color: #0056b3;
         }
+        main {
+            padding: 20px;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .bg {
+            width: 700px;
+            height: auto;
+            margin-bottom: 20px;
+            cursor: pointer;
+			}
+        .bg2 {
+            width: 340px;
+            height: auto;
+            margin-bottom: 20px;
+            cursor: pointer;
+			}
+        /* 放大图片的样式 */
+        .modal {
+            display: none; /* 隐藏模态框 */
+            position: fixed; /* 固定位置 */
+            z-index: 1; /* 放在最前面 */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* 允许滚动 */
+            background-color: rgba(0, 0, 0, 0.9); /* 黑色背景透明度 */
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 100%;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			top: 50%;
+			left: 50%;
+            max-width: 1200px;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+		.a {
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img class="logo" src="https://mcnarong.github.io/xy/logo.png" alt="星野启动 Logo">
+    <header>
         <h1>欢迎来到星野</h1>
-        <p>星野启动是一个充满惊喜的游戏世界，等待着您的探索。在这里，您可以畅游于各种奇幻地形，与朋友一起冒险，还有许多有趣的社区活动等着您加入。</p>
-        <a class="btn" href="#">了解更多</a>
-    </div>
+    </header>
+    <nav>
+        <a href="#home">主页</a>
+        <a href="#about">关于我们</a>
+        <a href="#services">服务</a>
+        <a href="#contact">联系我们</a>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="section" id="welcome">
+                <img class="logo" src="https://mcnarong.github.io/xy/logo.png" alt="星野启动 Logo">
+                <h1>欢迎来到星野</h1>
+                <p>星野启动是一个充满惊喜的游戏世界，等待着您的探索。在这里，您可以畅游于各种奇幻地形，与朋友一起冒险，还有许多有趣的社区活动等着您加入。</p>
+                <a class="btn" href="https://qm.qq.com/q/yPdsOiMnnM">了解更多</a><br><br>
+                <img id="bgImage" class="bg" src="https://mcnarong.github.io/xy/bg.png" alt="展示图片 Logo">
+            </div>
+            <div class="section" id="home"> <!-- 第一段 -->
+                <h2>服务器特色玩法介绍</h2>
+                <p>在这里，我们可以玩的东西有很多<br>首先，必不可少的就是抽奖</p>
+				<img id="cj1Image" class="bg2" src="https://mcnarong.github.io/xy/cj1.png" alt="展示图片 Logo"> <img id="cj2Image" class="bg2" src="https://mcnarong.github.io/xy/cj2.png" alt="展示图片 Logo">
+            </div>
+            <div class="section" id="contact"> <!-- 第2段 -->
+                <h2>联系我们</h2>
+                <p>如果你有任何问题或建议，请通过以下方式联系我们：</p>
+                <ul>
+				<li>官方交流群：<a class="a" href="https://qm.qq.com/q/yPdsOiMnnM">336794760</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+<!-- 放大图片的模态框 -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="img01">
+</div>
+<div id="myModal2" class="modal">
+    <span class="close" onclick="closeModal2()">&times;</span>
+    <img class="modal-content" id="img02">
+</div>
+<div id="myModal3" class="modal">
+    <span class="close" onclick="closeModal3()">&times;</span>
+    <img class="modal-content" id="img03">
+</div>
+<script>
+    // 获取第一个模态框和图片元素
+    var modal = document.getElementById("myModal");
+    var img = document.getElementById("bgImage");
+    var modalImg = document.getElementById("img01");
+
+    // 获取第二个模态框和图片元素
+    var modal2 = document.getElementById("myModal2");
+    var img2 = document.getElementById("cj1Image");
+    var modalImg2 = document.getElementById("img02");
+
+    // 获取第3个模态框和图片元素
+    var modal3 = document.getElementById("myModal3");
+    var img3 = document.getElementById("cj2Image");
+    var modalImg3 = document.getElementById("img03");
+
+    // 打开第一个模态框
+    img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+    }
+
+    // 打开第二个模态框
+    img2.onclick = function(){
+        modal2.style.display = "block";
+        modalImg2.src = this.src;
+    }
+	
+    // 打开第3个模态框
+    img3.onclick = function(){
+        modal3.style.display = "block";
+        modalImg3.src = this.src;
+    }
+
+    // 关闭第一个模态框
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // 关闭第二个模态框
+    function closeModal2() {
+        modal2.style.display = "none";
+    }
+	
+    // 关闭第3个模态框
+    function closeModal3() {
+        modal3.style.display = "none";
+    }
+</script>
+    <footer>
+        <p>&copy; 2024 服务器一切解释权归星野所有.</p>
+    </footer>
 </body>
 </html>
